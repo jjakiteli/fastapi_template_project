@@ -1,0 +1,12 @@
+fastapi
+pydantic
+sqlalchemy
+uvicorn
+pre-commit
+aiosqlite
+PyJWT
+python-dotenv
+passlib[bcrypt]
+python-multipart
+pytest
+httpx
