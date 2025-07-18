@@ -17,6 +17,10 @@ from users.models import UserDB  # noqa
 async def setup_db():
     load_dotenv()
 
+    print("📁 DB path set to:", os.getenv("DB_PATH"))
+    if not os.path.exists(os.getenv("DB_PATH")):
+        os.makedirs(os.getenv("DB_PATH"))
+
     async with engine.begin() as conn:
         await conn.execute(text("PRAGMA foreign_keys=ON"))
         await conn.run_sync(Base.metadata.create_all)
